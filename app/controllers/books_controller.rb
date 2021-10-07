@@ -11,7 +11,7 @@ class BooksController < ApplicationController
         if @book.save
           redirect_to book_path(@book.id)
         else
-          render index_path
+          render :index
         end
 
     end
@@ -25,7 +25,7 @@ class BooksController < ApplicationController
     end
 
     def update
-      book = book.find(parame[:id])
+      book = Book.find(parame[:id])
       book.update(book_params)
       redirect_to book_path(book)
     end
@@ -36,9 +36,9 @@ class BooksController < ApplicationController
       redirect_to books_path
     end
 
-      private
-      def book_params
-          params.require(:book).permit(:title, :body)
-      end
+    private
+    def book_params
+      params.require(:book).permit(:title, :body)
+    end
 
 end

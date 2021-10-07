@@ -1,13 +1,13 @@
 <div class="show">
     <p class="book-title">
-        <%= @book.title %>
+        Title:<%= @book.title %>
     </p>
 
     <p class="book-body">
-        <%= @book.body %>
+        Body:<%= @book.body %>
     </p>
 </div>
 
 
-<%= link_to Edit, edit_book_path(@blog) %>
-<%= link_to Back, edit_book_path(@blog) %>
+<%= link_to "Edit", edit_book_path(@book) %>
+<%= link_to "Back", books_path %>
