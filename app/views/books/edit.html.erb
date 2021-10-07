@@ -5,7 +5,9 @@
     <%= f.text_field :title %>
     <p>Body</p>
     <%= f.text_area :body %>
-    <%= f.sbmit "Update Book" %>
+    <%= f.submit "Update Book" %>
+    <%= link_to "Show", book_path(@book) %>
+    <%= link_to "Back", books_path %>
 
 
 <% end %>
